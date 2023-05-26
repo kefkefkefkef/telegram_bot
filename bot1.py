@@ -15,7 +15,7 @@ dp = Dispatcher(bot)
 async def translit(message: types.Message):
     translit_csv = pd.read_csv('translit.csv')
     
-    new_string = ''
+    new_string = 'VERONIKA, '
     for x in message.text:
         if x.upper() in translit_csv['Национальный знак'].to_list():
             new_string += translit_csv['Рекомендуемая транслитерация'].to_list()[translit_csv['Национальный знак'].to_list().index(x.upper())]
